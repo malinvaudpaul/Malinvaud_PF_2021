@@ -26,5 +26,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'td2.exercice1.App'
+    mainClass = 'td2.exercice2.App'
 }
