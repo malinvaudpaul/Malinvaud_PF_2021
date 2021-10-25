@@ -17,7 +17,9 @@ public class App<T> {
     Function<List<Predicate<T>>, List<T>> filtragePredicatif = p -> {
         List<T> ok = new ArrayList<>();
         p.forEach((val) -> {
-            // ok.add(val);
+            /*
+             * if (accesAutorise.test(p)) { // ok.add(val); }
+             */
         });
         return ok;
     };
