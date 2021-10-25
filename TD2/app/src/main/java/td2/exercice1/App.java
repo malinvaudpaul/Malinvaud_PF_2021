@@ -1,5 +1,6 @@
 package td2.exercice1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,21 +13,29 @@ public class App {
         Somme<String> sommeString = (x, y) -> x.concat(y);
 
         // Question2
-        /*
-         * deux lambdas implémentations de ToString, une pour les listes de String (l2s)
-         * et une pour les map String → Integer (m2s) dont l’effet est respectivement de
-         * créér une chaîne de la forme "e1, e2, …" et de la forme "k1: v1, k2: v2, …".
-         */
-        List<String> l2s = { "e1", "e2" };
+        List<String> l2s = new ArrayList<>();
+        l2s.add("e1");
+        l2s.add("e2");
         ToString<List<String>> toStringList = x -> {
-            String y = "";
-            return x.forEach(y.concat(x));
+            final StringBuilder builder = new StringBuilder();
+            x.forEach((val) -> {
+                builder.append(val + ", ");
+            });
+            return builder.toString();
         };
-        l2s.show();
+        System.out.println(toStringList.show(l2s));
+
         HashMap<String, Integer> hm = new HashMap<>();
         hm.put("k1", 1);
         hm.put("k2", 2);
         ToString<HashMap<String, Integer>> toStringMap = x -> {
+            final StringBuilder builder = new StringBuilder();
+            x.forEach((key, val) -> {
+                builder.append(String.format("%s : %d, ", key, val));
+            });
+            return builder.toString();
         };
+        System.out.println(toStringMap.show(hm));
+
     }
 }
