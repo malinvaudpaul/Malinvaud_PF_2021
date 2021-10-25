@@ -21,12 +21,13 @@ public class App {
      * (entry.getValue() == null) { return false; } }); return true; };
      */
 
-    Predicate<Etudiant> aNoteEliminatoire = e -> {
-        e.notes().entrySet().forEach(entry -> {
-            if (entry.getValue() < 6) {
-                rtr = false;
+    Predicate<Etudiant> aNoteEliminatoire = x -> {
+        for (int i = 0; i < x.notes().size(); i++) {
+            if (x.notes().get(x.notes().keySet()) < 6) {
+                return false;
             }
-        });
+        }
+        return true;
     };
 
     public static void main(String[] args) {
