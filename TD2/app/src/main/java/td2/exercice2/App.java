@@ -1,5 +1,7 @@
 package td2.exercice2;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -11,6 +13,14 @@ public class App<T> {
     Predicate<Paire<Integer, Double>> tropLourd = p -> p.snd > 150.0;
     Predicate<Paire<Integer, Double>> poidsCorrect = Predicate.not(tropLourd);
     Predicate<Paire<Integer, Double>> accesAutorise = p -> tailleCorrecte.test(p) && poidsCorrect.test(p);
+
+    Function<List<Predicate<T>>, List<T>> filtragePredicatif = p -> {
+        List<T> ok = new ArrayList<>();
+        p.forEach((val) -> {
+            // ok.add(val);
+        });
+        return ok;
+    };
 
     public static void main(String[] args) {
         App app = new App<>();
