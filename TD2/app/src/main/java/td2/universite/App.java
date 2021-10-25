@@ -2,8 +2,33 @@ package td2.universite;
 
 import java.util.Map;
 import java.util.Set;
+import td2.universite.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.BiPredicate;
 
 public class App {
+
+    /*
+     * Function<String, BiPredicate<Etudiant, Annee>> afficheSi = e -> {
+     * e.forEach((val) -> { /* if (accesAutorise.test(p)) { // ok.add(val); }
+     * 
+     * });return ok;};
+     */
+
+    /*
+     * Predicate<Etudiant> aDEF = e -> { e.notes().entrySet().forEach(entry -> { if
+     * (entry.getValue() == null) { return false; } }); return true; };
+     */
+
+    Predicate<Etudiant> aNoteEliminatoire = e -> {
+        e.notes().entrySet().forEach(entry -> {
+            if (entry.getValue() < 6) {
+                rtr = false;
+            }
+        });
+    };
+
     public static void main(String[] args) {
         Matiere m1 = new Matiere("MAT1");
         Matiere m2 = new Matiere("MAT2");
