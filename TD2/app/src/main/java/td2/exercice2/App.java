@@ -14,16 +14,21 @@ public class App<T> {
     Predicate<Paire<Integer, Double>> poidsCorrect = Predicate.not(tropLourd);
     Predicate<Paire<Integer, Double>> accesAutorise = p -> tailleCorrecte.test(p) && poidsCorrect.test(p);
 
-    Function<List<Predicate<T>>, List<T>> filtragePredicatif = p -> {
-        List<T> ok = new ArrayList<>();
-        p.forEach((val) -> {
-            if (accesAutorise.test(p)) {
-                ok.add(val);
-            }
+    public <T> List<T> filtragePredicatif(List<Predicate<T>> conditions, List<T> elements){
+        List<T> rtn = new ArrayList<>();
+        //On récupère les prédicats
+        Predicate<T> predicat = x -> true;
 
-        });
-        return ok;
-    };
+        for(Predicate<T> p : conditions){
+            predicat = predicat.and(p);
+        }
+        for(T e : elements) {
+            if (predicat.test(e)){
+                rtn.add(e);
+            }
+        }
+        return rtn;
+    }
 
     public static void main(String[] args) {
         App app = new App<>();
