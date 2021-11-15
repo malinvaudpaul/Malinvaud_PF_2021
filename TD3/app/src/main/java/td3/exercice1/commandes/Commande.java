@@ -56,11 +56,9 @@ public class Commande {
     }
 
     public Double cout(Function<Paire<Produit, Integer>, Double> calculLigne) {
-        double rtr = 0;
-        for (Paire<Produit, Integer> l : normaliser().lignes) {
-            rtr += calculLigne.apply(l);
-        }
-        return rtr;
+        return lignes.stream()
+                .map(l -> calculLigne.apply(l))
+                .reduce(0.0, (a,b) -> a + b) ;
     }
 
     public String affiche(Function<Paire<Produit, Integer>, Double> calculLigne) {
