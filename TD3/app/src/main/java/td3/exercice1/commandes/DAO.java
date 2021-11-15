@@ -52,12 +52,12 @@ public class DAO {
      * ensemble des différents produits commandés
      */
     public Set<Produit> produits() {
-        /*
         return commandes.stream()
                 .flatMap(c -> c.lignes().stream())
                 .map(Paire::fst)
                 .collect(Collectors.toSet());
-         */
+
+        /*
         Set<Produit> sp = new HashSet<Produit>() ;
         for(int i = 0 ; i < commandes.size() ; i++) {
             commandes.get(i).lignes().forEach(cl -> {
@@ -66,17 +66,17 @@ public class DAO {
 
         };
         return sp ;
+         */
     }
 
     /**
      * liste des commandes vérifiant un prédicat
      */
     public List<Commande> selectionCommande(Predicate<Commande> p) {
-        /*
         return commandes.stream()
             .filter(p)
             .collect(Collectors.toList());
-         */
+        /*
         List<Commande> lc = new ArrayList<Commande>();
         commandes.forEach(c -> {
             if(p.test(c)){
@@ -84,17 +84,18 @@ public class DAO {
             }
         });
         return lc ;
+         */
     }
 
     /**
      * liste des commandes dont au moins une ligne vérifie un prédicat
      */
     public List<Commande> selectionCommandeSurExistanceLigne(Predicate<Paire<Produit,Integer>> p) {
-        /*
+
         return commandes.stream()
             .filter(c -> c.lignes().stream().anyMatch(p))
             .collect(Collectors.toList());
-        */
+        /*
         List<Commande> lc = new ArrayList<Commande>();
         commandes.forEach(c -> {
             if(p.test(c)){
@@ -102,6 +103,7 @@ public class DAO {
             }
         });
         return lc ;
+         */
     }
 
     /**

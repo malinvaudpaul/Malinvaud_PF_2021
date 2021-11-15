@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 import td3.exercice1.paires.Paire;
 
@@ -26,13 +27,12 @@ public class Commande {
 
     @Override
     public String toString() {
-        StringBuilder str = new StringBuilder();
-        str.append("Commande\n");
-        for (Paire<Produit, Integer> ligne : lignes) {
-            str.append(String.format("%s x%d\n", ligne.fst(), ligne.snd()));
-        }
-        return str.toString();
+        return lignes.stream()
+                .map(l -> formateurLigne.apply(l))
+                .collect(Collectors.joining());
     }
+
+    Function<Paire<Produit, Integer>, String> formateurLigne = (k,v) -> String.format("%i, %s", k, v) ;
 
     /**
      * cumule les lignes en fonction des produits
