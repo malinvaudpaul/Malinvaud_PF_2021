@@ -1,4 +1,5 @@
 package td3.exercice1.commandes;
+import td3.exercice1.paires.Paire;
 
 import java.util.List;
 import java.util.Map;
@@ -7,9 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-import td3.exercice1.paires.Paire;
-
-public class Commande {
+public class Commande<T> {
     private List<Paire<Produit, Integer>> lignes;
 
     public Commande() {
@@ -32,7 +31,7 @@ public class Commande {
                 .collect(Collectors.joining());
     }
 
-    Function<Paire<Produit, Integer>, String> formateurLigne = (k,v) -> String.format("%i, %s", k, v) ;
+    private static final Function<Paire<Produit, Integer>, String> formateurLigne = l-> String.format("%s %d",  l.fst(), l.snd());
 
     /**
      * cumule les lignes en fonction des produits
@@ -69,6 +68,7 @@ public class Commande {
         str.append(HLINE);
         str.append("+ nom        + prix       + qté + prix ht    + tva    + prix ttc   +\n");
         str.append(HLINE);
+        /*
         for (Paire<Produit, Integer> ligne : c.lignes) {
             str.append(String.format("+ %10s + %10.2f + %3d + %10.2f + %5.2f%% + %10.2f +\n", ligne.fst(), // nom
                     ligne.fst().prix(), // prix unitaire
@@ -76,10 +76,9 @@ public class Commande {
                     ligne.fst().prix() * ligne.snd(), // prix ht
                     ligne.fst().cat().tva() * 100, // tva
                     calculLigne.apply(ligne)));
-        }
+        }*/
         str.append(HLINE);
         str.append(String.format("Total : %10.2f", c.cout(calculLigne)));
         return str.toString();
     }
-
 }

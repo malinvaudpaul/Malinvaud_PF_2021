@@ -1,0 +1,47 @@
+
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ•˜Šüÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Î¬Òá
+N	java:S106"9Replace this use of System.out or System.err by a logger.(°ñ«˜
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(„óÙ‚
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(Ò¢ñ»ıÿÿÿÿ
+h	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ§Œûÿÿÿÿ
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(°Ô©í
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(É­æìüÿÿÿÿ
+V	java:S125n"<This block of commented-out lines of code should be removed.(ûâ»•şÿÿÿÿ
+m
+java:S4276z"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(ìØî¾ÿÿÿÿÿ
+h
+java:S4276|"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(¿ÒØ
+m
+java:S4276}"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(øÃÙûùÿÿÿÿ
+p
+java:S4276~"URefactor this code to use the more specialised Functional Interface 'DoublePredicate'(Î˜¥Íüÿÿÿÿ
+p
+java:S4276"URefactor this code to use the more specialised Functional Interface 'DoublePredicate'(“’Úáşÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(“’Úáşÿÿÿÿ
+O	java:S106–"9Replace this use of System.out or System.err by a logger.(ï•ÿ
+T	java:S106™"9Replace this use of System.out or System.err by a logger.(øÀàşıÿÿÿÿ
+\
+java:S1612"@Replace this lambda with method reference 'System.out::println'.(ÇÉ’Ìûÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(ÇÉ’Ìûÿÿÿÿ
+W
+java:S1612Ÿ"@Replace this lambda with method reference 'System.out::println'.(²„Â
+O	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(²„Â
+\
+java:S1124¦"EReorder the modifiers to comply with the Java Language Specification.(‡ĞÍ
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(ÏÜ†ù
+h
+java:S3457©"Q%n should be used in place of \n to produce the platform-specific line separator.(ÏÜ†ù
+T	java:S106­"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+O	java:S106³"9Replace this use of System.out or System.err by a logger.(ÏÜ†ù
+h
+java:S3457³"Q%n should be used in place of \n to produce the platform-specific line separator.(ÏÜ†ù
+O	java:S106·"9Replace this use of System.out or System.err by a logger.(ÃÑ°
+O	java:S106–"9Replace this use of System.out or System.err by a logger.(¢¬ê«
+W	java:S125¡"<This block of commented-out lines of code should be removed.(ùº™’ûÿÿÿÿ
+W	java:S125£"<This block of commented-out lines of code should be removed.(ò¼Î¯ÿÿÿÿÿ
+e
+java:S1104L"OMake fst a static final constant or non-public and provide accessors if needed.(Ûãøç
+e
+java:S1104M"OMake snd a static final constant or non-public and provide accessors if needed.(ëæµ¿
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚŸÎÒûÿÿÿÿ
