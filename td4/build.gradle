@@ -12,7 +12,7 @@ plugins {
 // on utilise les records de Java
 // utiliser une version suffisante
 // attention, la syntaxe peut changer entre les versions tant que non définitive
-sourceCompatibility = JavaVersion.VERSION_15
+sourceCompatibility = JavaVersion.VERSION_16
 
 repositories {
     jcenter()
@@ -20,15 +20,14 @@ repositories {
 
 dependencies {
     testImplementation 'org.testng:testng:6.14.3'
-    compile "org.apache.logging.log4j:log4j-api:2.5"
-    compile "org.apache.logging.log4j:log4j-core:2.5"
-    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.0" 
+    implementation "org.apache.logging.log4j:log4j-api:2.5"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.5.0"
 }
 
 application {
-    // mainClassName = 'promowarn.version1.App' // à tester
+    mainClassName = 'promowarn.version1.App' // à tester
     // mainClassName = 'promowarn.version2.App' // à tester
-    mainClassName = 'promowarn.version3.App' // à réaliser
+    // mainClassName = 'promowarn.version3.App' // à réaliser
 }
 
 tasks.withType(JavaCompile) {
